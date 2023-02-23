@@ -113,10 +113,14 @@ class MainImage extends StatelessWidget {
             bottomLeft: Radius.circular(40),
             bottomRight: Radius.circular(40)),
       ),
-      child: Row(
+      child: Center( child:Row(
         children: [
+          Expanded(
+            flex: 2,
+            child:
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
                 padding: EdgeInsets.fromLTRB(10, 35, 0, 0),
@@ -133,8 +137,13 @@ class MainImage extends StatelessWidget {
                 ),
               ),
             ],
-          ),
-          Column(mainAxisSize: MainAxisSize.max, children: [
+          )),
+          Expanded(
+            flex: 6,
+            child:
+          Column(
+            //mainAxisSize: MainAxisSize.min,
+            children: [
             Center(
               child: Padding(
                 padding: EdgeInsets.fromLTRB(0, 25, 0, 0),
@@ -145,13 +154,16 @@ class MainImage extends StatelessWidget {
                 ),
               ),
             ),
-          ]),
+          ])),
+          Expanded(
+            flex: 2,
+            child:
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Padding(
-                  padding: EdgeInsets.fromLTRB(20, 45, 0, 0),
+                  padding: EdgeInsets.fromLTRB(0, 45, 20, 0),
                   child: Text(
                     "#" + pokemon.id.toString(),
                     style: TextStyle(
@@ -159,9 +171,9 @@ class MainImage extends StatelessWidget {
                         color: Color.fromARGB(255, 23, 23, 23)),
                   )),
             ],
-          ),
+          )),
         ],
-      ),
+      )),
     );
   }
 }
